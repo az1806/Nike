@@ -84,7 +84,7 @@
               <a title="编辑"   href="admin/productcate?method=updateProducttype&type_Id=<%=pro.get(i).getType_Id()%>">
                 <i class="layui-icon">&#xe642;</i>
               </a>
-              <a title="删除"  onclick="return confirm('确定要执行此操作吗？')" href="admin/productcate?method=deletetype&type_Id=<%=pro.get(i).getType_Id() %>">
+              <a title="删除"  href="admin/productcate?method=deletetype&type_Id=<%=pro.get(i).getType_Id() %>">
                 <i class="layui-icon">&#xe640;</i>
               </a>
             </td>

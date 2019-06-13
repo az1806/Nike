@@ -41,24 +41,5 @@ public class NewsTypeServlet extends BaseServlet {
 				request.getRequestDispatcher("news-type.jsp").forward(request, response);
 			}
 	}
-	public void updateNewstype(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		int id = Integer.parseInt(request.getParameter("type_Id"));
-		Newstype ntlist = ntDao.updateNewstypeById(id);
-		request.setAttribute("ntlist", ntlist);
-		request.getRequestDispatcher("newstype-update.jsp").forward(request, response);
-			
-	}
-	public void updatesNewstype(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		int id = Integer.parseInt(request.getParameter("id"));
-		String typename = java.net.URLDecoder.decode(request.getParameter("typename"),  "utf-8");
-		int n = ntDao.updatesNewstypeById(id, typename);
-		if(n>0){
-			List<Newstype> nlist = ntDao.getAllNewstype();
-			request.setAttribute("nlist", nlist);
-			request.getRequestDispatcher("news-type.jsp").forward(request, response);	
-		}
-	}
 
 }
