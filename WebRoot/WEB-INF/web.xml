@@ -8,48 +8,260 @@
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
-    <servlet-name>AdminServlet</servlet-name>
-    <servlet-class>com.servlet.AdminServlet</servlet-class>
+    <servlet-name>ProductServlet</servlet-name>
+    <servlet-class>com.Nike.Servlet.ProductServlet</servlet-class>
   </servlet>
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
-    <servlet-name>LoginServlet</servlet-name>
-    <servlet-class>com.servlet.LoginServlet</servlet-class>
+    <servlet-name>HeadServlet</servlet-name>
+    <servlet-class>com.Nike.Servlet.HeadServlet</servlet-class>
   </servlet>
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
-    <servlet-name>RegisterServlet</servlet-name>
-    <servlet-class>com.servlet.RegisterServlet</servlet-class>
+    <servlet-name>FootServlet</servlet-name>
+    <servlet-class>com.Nike.Servlet.FootServlet</servlet-class>
+  </servlet>
+ 
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ProducttypeServlet</servlet-name>
+    <servlet-class>com.Nike.Servlet.ProducttypeServlet</servlet-class>
   </servlet>
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
-    <servlet-name>SuccessServlet</servlet-name>
-    <servlet-class>com.servlet.SuccessServlet</servlet-class>
+    <servlet-name>ProductCateServlet</servlet-name>
+    <servlet-class>com.Nike.Servlet.admin.ProductCateServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ProductListServlet</servlet-name>
+    <servlet-class>com.Nike.Servlet.admin.ProductListServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>HTProductServlet</servlet-name>
+    <servlet-class>com.Nike.Servlet.admin.HTProductServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>MessageListServlet</servlet-name>
+    <servlet-class>com.Nike.Servlet.admin.MessageListServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DesignerlistServlet</servlet-name>
+    <servlet-class>com.Nike.Servlet.admin.DesignerlistServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CompanyInformationServlet</servlet-name>
+    <servlet-class>com.Nike.Servlet.admin.CompanyInformationServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>NewsListServlet</servlet-name>
+    <servlet-class>com.Nike.Servlet.admin.NewsListServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>NewsTypeServlet</servlet-name>
+    <servlet-class>com.Nike.Servlet.admin.NewsTypeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AboutSrevlet</servlet-name>
+    <servlet-class>com.Nike.Servlet.AboutSrevlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>newstypeServlet</servlet-name>
+    <servlet-class>com.Nike.Servlet.newstypeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ContactSrevlet</servlet-name>
+    <servlet-class>com.Nike.Servlet.ContactSrevlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>newlistServlet</servlet-name>
+    <servlet-class>com.Nike.Servlet.newlistServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>NewListSrevlet</servlet-name>
+    <servlet-class>com.Nike.Servlet.NewListSrevlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>IndexServlet</servlet-name>
+    <servlet-class>com.Nike.Servlet.IndexServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>LunBoServlet</servlet-name>
+    <servlet-class>com.Nike.Servlet.LunBoServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>pruductcpflServlet</servlet-name>
+    <servlet-class>com.Nike.Servlet.pruductcpflServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>MessageServletQian</servlet-name>
+    <servlet-class>com.Nike.Servlet.MessageServletQian</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ListServlet</servlet-name>
+    <servlet-class>com.Nike.Servlet.ListServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>NewListServlet</servlet-name>
+    <servlet-class>com.Nike.Servlet.NewListServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>newsxiangqingServlet</servlet-name>
+    <servlet-class>com.Nike.Servlet.newsxiangqingServlet</servlet-class>
   </servlet>
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <servlet-mapping>
-    <servlet-name>AdminServlet</servlet-name>
-    <url-pattern>/admin</url-pattern>
+    <servlet-name>ProductServlet</servlet-name>
+    <url-pattern>/product</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>LoginServlet</servlet-name>
-    <url-pattern>/login</url-pattern>
+    <servlet-name>HeadServlet</servlet-name>
+    <url-pattern>/head</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>RegisterServlet</servlet-name>
-    <url-pattern>/register</url-pattern>
+    <servlet-name>FootServlet</servlet-name>
+    <url-pattern>/foot</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ProducttypeServlet</servlet-name>
+    <url-pattern>/producttype</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>SuccessServlet</servlet-name>
-    <url-pattern>/ss</url-pattern>
-  </servlet-mapping>	
+    <servlet-name>ProductCateServlet</servlet-name>
+    <url-pattern>/admin/productcate</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ProductListServlet</servlet-name>
+    <url-pattern>/admin/productlist</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>HTProductServlet</servlet-name>
+    <url-pattern>/admin/htproduct</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MessageListServlet</servlet-name>
+    <url-pattern>/admin/messagelist</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DesignerlistServlet</servlet-name>
+    <url-pattern>/admin/designerlist</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CompanyInformationServlet</servlet-name>
+    <url-pattern>/admin/companyinfo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>NewsListServlet</servlet-name>
+    <url-pattern>/admin/newslist</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>NewsTypeServlet</servlet-name>
+    <url-pattern>/admin/newstype</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AboutSrevlet</servlet-name>
+    <url-pattern>/aboutSrevlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>newstypeServlet</servlet-name>
+    <url-pattern>/newstypeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ContactSrevlet</servlet-name>
+    <url-pattern>/ContactSrevlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>IndexServlet</servlet-name>
+    <url-pattern>/IndexServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LunBoServlet</servlet-name>
+    <url-pattern>/LunBoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>pruductcpflServlet</servlet-name>
+    <url-pattern>/pruductcpflServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MessageServletQian</servlet-name>
+    <url-pattern>/MessageServletQian</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>NewListServlet</servlet-name>
+    <url-pattern>/newlist</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>newsxiangqingServlet</servlet-name>
+    <url-pattern>/newsxiangqing</url-pattern>
+  </servlet-mapping>
+  
   <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>IndexServlet</welcome-file>
   </welcome-file-list>
 </web-app>

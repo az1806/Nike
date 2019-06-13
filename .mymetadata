@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-module
   type="WEB"
-  name="NiKe"
-  id="myeclipse.1558406726354"
-  context-root="/NiKe"
+  name="NIKES"
+  id="myeclipse.1559208020732"
+  context-root="/NIKES"
   j2ee-spec="5.0"
-  archive="NiKe.war">
+  archive="NIKES.war">
   <attributes>
     <attribute name="webrootdir" value="WebRoot" />
   </attributes>
