@@ -20,7 +20,7 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="admin/css/font.css">
     <link rel="stylesheet" href="admin/css/xadmin.css">
-   
+   <script type="text/javascript" src="admin/js/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="admin/lib/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="admin/js/xadmin.js"></script>
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
@@ -30,15 +30,12 @@
     <![endif]-->
   </head>
   <script type="text/javascript">
-  			function addmessage(){
-  				var mName = document.getElementById("mName").value;
-  				var mPhone = document.getElementById("mPhone").value;
-  				var mEmial = document.getElementById("mEmial").value;
-  				var mContent = document.getElementById("mContent").value;
-  				var mstate = document.getElementById("mstate").value;
-  				if(mName !="" && mPhone !="" && mEmial !="" && mContent !="" &&mstate !=""){
-  					window.location.href="admin/messagelist?method=addMessage&mName="+encodeURI(encodeURI(mName))+"&mPhone="+encodeURI(encodeURI(mName))+"&mEmial="+encodeURI(encodeURI(mEmial))+"&mContent="+encodeURI(encodeURI(mContent)+"&mstate="+encodeURI(encodeURI(mstate)));
-  				}
+  			function getms(){
+  				var state=document.getElementById("state").value;
+  				
+  					window.location.href="admin/messagelist?method=seachMessage&state="+encodeURI(encodeURI(state));
+  				
+  				
   			}
   </script>
   <body>
@@ -55,24 +52,15 @@
     <div class="x-body">
       <div class="layui-row">
         <form class="layui-form layui-col-md12 x-so layui-form-pane">
-          <input class="layui-input" placeholder="姓名" name="cate_name" id="mName">
-          <input class="layui-input" placeholder="电话" name="cate_name" id="mPhone">
-          <input class="layui-input" placeholder="邮件" name="cate_name" id="mEmial">
-          <input class="layui-input" placeholder="内容" name="cate_name" id="mContent">
-          <input class="layui-input" placeholder="状态" name="cate_name" id="mstate">
-          <button class="layui-btn"  type="button" onclick = "addmessage()" lay-filter="sreach"><i class="layui-icon"></i>增加</button>
+         
+          <input class="layui-input" placeholder="状态" name="state" id="state">
+          <button class="layui-btn"  type="button" onclick ="getms()">搜索</button>
         </form>
       </div>
-      <xblock>
-        <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
-        <span class="x-right" style="line-height:40px">共有数据：88 条</span>
-      </xblock>
+      
       <table class="layui-table">
         <thead>
           <tr>
-            <th>
-              <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
-            </th>
             <th>ID</th>
             <th>姓名</th>
             <th>邮件</th>
@@ -84,9 +72,6 @@
         <tbody>
         <%for(int i=0;i<mes.size();i++){ %>
           <tr>
-            <td>
-              <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
-            </td>
             <td><%=mes.get(i).getId() %></td>
             <td><%=mes.get(i).getName() %></td>
             <td><%=mes.get(i).getPhone() %></td>
@@ -94,10 +79,10 @@
             <td><%=mes.get(i).getContent() %></td>
              <td><%=mes.get(i).getState() %></td>
             <td class="td-manage">
-              <a title="编辑"  onclick="x_admin_show('编辑','admin-edit.html')" href="javascript:;">
+              <a title="编辑"  onclick="x_admin_show('编辑','admin-edit.html')" href="admin/messagelist?method=getMessage&Id=<%=mes.get(i).getId()%>">
                 <i class="layui-icon">&#xe642;</i>
               </a>
-              <a title="删除" onclick="member_del(this,'要删除的id')" href="admin/messagelist?method=deletMessage&Id=<%=mes.get(i).getId()%>">
+              <a title="删除" onclick="return confirm('确定要执行此操作吗？')" href="admin/messagelist?method=deletMessage&Id=<%=mes.get(i).getId()%>">
                 <i class="layui-icon">&#xe640;</i>
               </a>
             </td>
@@ -105,15 +90,6 @@
           <%} %>
         </tbody>
       </table>
-      <div class="page">
-        <div>
-          <a class="prev" href="">&lt;&lt;</a>
-          <a class="num" href="">1</a>
-          <span class="current">2</span>
-          <a class="num" href="">3</a>
-          <a class="num" href="">489</a>
-          <a class="next" href="">&gt;&gt;</a>
-        </div>
       </div>
 
     </div>

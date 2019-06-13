@@ -1,17 +1,12 @@
-<%@ page language="java" import="java.util.*,com.Nike.entity.*" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-Company com1=(Company)request.getAttribute("c");
-List<Banner> lb=(List<Banner>)request.getAttribute("lunbo");
-List<Product> com=(List<Product>)request.getAttribute("suiji");
 %>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-
-   <head>
-   <base href="<%=basePath %>">
-   
+ <head>
     <title>某某家具设计公司企业官网-模板之家</title>
     ﻿<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -38,116 +33,46 @@ List<Product> com=(List<Product>)request.getAttribute("suiji");
 <script type="text/javascript" src="lib/raty/jquery.raty.js"></script>
 <script type="text/javascript" src="js/main.min.js?t=1"></script>
 </head>
+  
+  <body>
+   <header>
+    <div class="header-top">
+        <div class="width-center">
+            <div class="header-logo "><img src="images/logo.png" alt=""></div>
+            <div class="header-title div-inline">
+                <strong>某某家具设计公司</strong>
+                <span>www.cssmoban.com</span>
+            </div>
 
-<body>
-
-<jsp:include page="head.jsp"></jsp:include>
-
-<jsp:include page="lunbo.jsp"></jsp:include>
-
-<section class="index-section">
-    <div>
-        <span></span>
-        <span></span>
+            <div class="search-box div-inline">
+                <div class="input-box"><input type="text" name="" placeholder="             请输入关键字"></div>
+                <div class="search-botton"></div>
+            </div>
+        </div>
     </div>
-    <div class="index-content">
-        <section class="index-content-section-first"><div><img src="images/sectionbanner.png" alt=""></div> </section>
-        <section class="index-content-section-second">
-            <div>
-                <div class="index-auto">
-            <article>公司介绍</article>
-            <h6>COMPANY INTRODUCTION</h6>
-            <main>
-            
-              <%=com1.getCompany_profile()%>   
-            
-            
-            </main>
-            <a class="index-button" href="">查看详情</a>
+    <div class="header-nav">
+        <button class="am-show-sm-only am-collapsed font f-btn" data-am-collapse="{target: '.header-nav'}">Menu <i
+                class="am-icon-bars"></i></button>
+        <nav>
+        <ul class="header-nav-ul am-collapse am-in">
+            <li class="on"><a href="index" name="index">首页</a></li>
+            <li><a href="about" name="about">关于我们</a></li>
+            <li><a href="product" name="show">产品展示</a></li>
+            <li><a href="article_list.html" name="new">新闻资讯</a></li>
+            <li><a href="contact" name="message">联系我们</a>
+                <div class="secondary-menu">
+
+                    <ul><li><a href="message.html" class="message"></a></li></ul>
                 </div>
-            </div>
-        </section>
-    </div>
-</section>
-
-<section class="index-product">
-    <main>
-        <ul>
-            <li class="index-active"><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
+            </li>
         </ul>
-    </main>
-    <main></main>
-    <main></main>
-</section>
-<div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >网页模板</a></div>
-<section class="index-margin-bottom">
-    <div class="index-morecase">
-        <span></span>
-        <a href="#">MORE &#62; &#62;</a>
+
+
+
+
+        </nav>
     </div>
-    <div class="index-content">
-        <div class="product-list">
-        <%for(int i=0;i<com.size();i++){ %>
-        
-         <div class="am-u-sm-6 am-u-md-6 am-u-lg-4">
-                <a href="product_info.html">
-                    <img src="<%=com.get(i).getProduct_pic() %>" />
-                </a>
-            </div>
-        
-        <%} %>
-           
-          
-        </div>
-    </div>
-</section>
 
-
-<section class="index-margin-bottom">
-    <div class="index-morecase">
-        <span></span>
-        <a href="#">MORE &#62; &#62;</a>
-    </div>
-    <div class="index-content">
-
-
-        <div class="new-index">
-            <ul>
-                <li><img  src="images/productlogo.png" alt=""> </li>
-                <li>  <a href="article_list_content.html"><h3>怎么搭配茶几与沙发?</h3>
-                    <article>在现代居住空间里面，有沙发的地方似乎总也少不了
-                        茶几的身影。尤其在现代客厅里，一款实用、时尚的</article></a></li>
-            </ul>
-            <ul>
-                <li><a href="article_list_content.html"><h3>家具有哪些类型?</h3>
-                    <article>按家具从风格上可以分为：现代家具、欧式古典家具、
-                        美式家具、中式古典家具（也就是红木家具），还有
-                    </article>
-                </a></li>
-                <li><a href="article_list_content.html"><h3>实木家具需保养防开裂</h3>
-                    <article>实木家具越来越受人们的欢迎，有很多业主在装修时
-                        都选择实木家具。但是他们购买之后不对它进行保养
-                    </article></a>
-                </li>
-                <li><a href="article_list_content.html"><h3>卧室如何选择合适的衣橱家具色彩</h3>
-                    <article>要选择合适的家具色彩，首先要符合个人爱好，又要
-                        注意与房间的大小、室内光线的明暗相结合，并且要
-                    </article></a>
-                </li>
-                <li><a href="article_list_content.html"><h3>韩派办公家具制作工艺过程</h3>
-                    <article>苏州韩派办公家具制作工艺过程，品牌办公家具厂家
-                        都具有一整套生产流程，通过对工艺流程的规范以及
-                    </article></a>
-                </li>
-            </ul>
-
-        </div>
-    </div>
-</section>
-
-﻿<jsp:include page="foot.jsp"></jsp:include>
-</body>
+</header>
+  </body>
 </html>

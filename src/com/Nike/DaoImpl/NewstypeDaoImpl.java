@@ -40,6 +40,28 @@ public class NewstypeDaoImpl implements NewstypeDao{
 		return DBManager.updateSQL("delete from newstype where type_Id='"+type_Id +"'");
 	}
 
+	@Override
+	public Newstype updateNewstypeById(int type_Id) {
+		
+		Newstype nt = new Newstype();
+		ResultSet rs = DBManager.querySQL("select * from newstype where type_Id='"+type_Id+"'");
+		try {
+			while(rs.next()){
+				
+				nt.setType_Id(rs.getInt(1));
+				nt.setType_Name(rs.getString(2));
+			}
+			return nt;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
 
+	@Override
+	public int updatesNewstypeById(int type_Id, String type_Name) {
+		return DBManager.updateSQL("update newstype set type_Name='"+type_Name+"' where type_Id='"+type_Id+"'");
+	}
 
 }

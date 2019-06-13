@@ -16,16 +16,16 @@ public class CompanyDaoImpl implements CompanyDao {
 		try {
 			while (rs.next()) {
 
-				list.setCompany_Id(rs.getInt(1));
-				list.setCompany_Name(rs.getString(2));
-				list.setCompany_Phone(rs.getString(3));
-				list.setCompany_Email(rs.getString(4));
-				list.setCompany_address(rs.getString(5));
-				list.setCompany_profile(rs.getString(6));
-				list.setCompany_culture(rs.getString(7));
-				list.setBusinesscall(rs.getString(8));
-				list.setOfficialwebsite(rs.getString(9));
-				list.setCompany_Pic(rs.getString(10));
+				list.setCompany_Id(rs.getInt("Company_id"));
+				list.setCompany_Name(rs.getString("Company_name"));
+				list.setCompany_Phone(rs.getString("Company_phone"));
+				list.setCompany_Email(rs.getString("Company_emial"));
+				list.setCompany_address(rs.getString("Company_address"));
+				list.setCompany_profile(rs.getString("Company_profile"));
+				list.setCompany_culture(rs.getString("Company_culture"));
+				list.setBusinesscall(rs.getString("businesscall"));
+				list.setOfficialwebsite(rs.getString("officialwebsite"));
+				list.setCompany_Pic(rs.getString("Company_pic"));
 			}
 			return list;
 		} catch (SQLException e) {
@@ -38,8 +38,7 @@ public class CompanyDaoImpl implements CompanyDao {
 	@Override
 	public Company updateCompanyById(int Company_Id) {
 		Company list = new Company();
-		ResultSet rs = DBManager
-				.querySQL("select * from company where Company_Id='"
+		ResultSet rs = DBManager.querySQL("select * from company where Company_Id='"
 						+ Company_Id + "'");
 		try {
 			while (rs.next()) {
@@ -54,10 +53,8 @@ public class CompanyDaoImpl implements CompanyDao {
 				list.setBusinesscall(rs.getString("businesscall"));
 				list.setOfficialwebsite(rs.getString("officialwebsite"));
 				list.setCompany_Pic(rs.getString("Company_pic"));
-				System.out.println(list);
 			}
 			return list;
-			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

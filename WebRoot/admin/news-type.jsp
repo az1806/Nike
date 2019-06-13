@@ -5,6 +5,7 @@
 			+ request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
 			List<Newstype> nt = (List<Newstype>)request.getAttribute("nlist");
+			
 %>
 
 <!DOCTYPE html>
@@ -37,7 +38,6 @@
  			if(ntname!="" ){
  				window.location.href="admin/newstype?method=addNewstype&ntname="+encodeURI(encodeURI(ntname));
  			}
- 			
  		}
  	</script>
   <body>
@@ -54,22 +54,13 @@
     <div class="x-body">
       <div class="layui-row">
         <form class="layui-form layui-col-md12 x-so layui-form-pane">
-         
            <input class="layui-input" placeholder="类型名称" name="type" id="ntname">
-              
-          <input class="layui-btn"  type="button" onclick="addnewstype()" value="添加" >
-        </form>
-      </div>
-      <xblock>
-        <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
-        <span class="x-right" style="line-height:40px">共有数据：88 条</span>
-      </xblock>
+            <input class="layui-btn"  type="button" onclick="addnewstype()" value="添加" ><br>
+           
+      
       <table class="layui-table">
         <thead>
           <tr>
-            <th>
-              <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
-            </th>
             <th>ID</th>
             <th>类型名称</th>
             <th>操作</th>
@@ -77,16 +68,13 @@
         <tbody>
         <%for(int i=0;i<nt.size();i++){ %>
           <tr>
-            <td>
-              <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
-            </td>
-            <td><%=nt. get(i).getType_Id()%></td>
+	        <td><%=nt. get(i).getType_Id()%></td>
             <td><%=nt.get(i).getType_Name() %></td>
             <td class="td-manage">
-              <a title="编辑"   href="">
+              <a title="编辑"   href="admin/newstype?method=updateNewstype&type_Id=<%=nt.get(i).getType_Id()%>">
                 <i class="layui-icon">&#xe642;</i>
               </a>
-              <a title="删除" onclick="member_del(this,'要删除的id')" href="admin/newstype?method=deletNewstype&type_Id=<%=nt.get(i).getType_Id()%>">
+              <a title="删除" onclick="return confirm('确定要执行此操作吗？')" href="admin/newstype?method=deletNewstype&type_Id=<%=nt.get(i).getType_Id()%>">
                 <i class="layui-icon">&#xe640;</i>
               </a>
             </td>
@@ -94,16 +82,6 @@
           <%} %>
         </tbody>
       </table>
-      <div class="page">
-        <div>
-          <a class="prev" href="">&lt;&lt;</a>
-          <a class="num" href="">1</a>
-          <span class="current">2</span>
-          <a class="num" href="">3</a>
-          <a class="num" href="">489</a>
-          <a class="next" href="">&gt;&gt;</a>
-        </div>
-      </div>
 
     </div>
     <script>

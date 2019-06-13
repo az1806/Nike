@@ -20,7 +20,9 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="admin/css/font.css">
     <link rel="stylesheet" href="admin/css/xadmin.css">
-    
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" href="admin/layui/css/layui.css" type="text/css"></link>
+    <script type="text/javascript" src="admin/layui/layui.js"></script>
     <script type="text/javascript" src="admin/lib/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="admin/js/xadmin.js"></script>
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
@@ -59,6 +61,7 @@
           <input class="layui-input" placeholder="性别" name="Sex" id="Sex">
           <input class="layui-input"   placeholder="简介" name="About"  id="About">
           <input class="layui-input" placeholder="图片" name="Pic" id="Pic">
+           <button class="layui-btn"  type="button" id="test1" >浏览上传</button>
           <input class="layui-btn"   lay-filter="sreach" type="button" value="增加" onclick="adddes()">
         </form>
       </div>
@@ -90,13 +93,14 @@
             <td><%=des.get(i).getDesigner_Name() %></td>
             <td><%=des.get(i).getDesigner_Sex() %></td>
             <td><%=des.get(i).getDesigner_About() %></td>
-            <td><%=des.get(i).getDesigner_Pic() %></td>
+            <td><img src="<%=des.get(i).getDesigner_Pic() %>"></img></td>
+           
             
             <td class="td-manage">
               <a title="编辑"   href="admin/designerlist?method=updateDesigner&designer_Id=<%=des.get(i).getDesigner_Id()%>">
                 <i class="layui-icon">&#xe642;</i>
               </a>
-              <a title="删除" onclick="member_del(this,'要删除的id')" href="admin/designerlist?method=deletDesigner&designer_Id=<%=des.get(i).getDesigner_Id() %>">
+              <a title="删除" onclick="return confirm('确定要执行此操作吗？')" href="admin/designerlist?method=deletDesigner&designer_Id=<%=des.get(i).getDesigner_Id() %>">
                 <i class="layui-icon">&#xe640;</i>
               </a>
             </td>
@@ -117,6 +121,27 @@
       </div>
 
     </div>
+    <script type="text/javascript">
+    		 var layer,upload;
+        $(function (){  //jQuery组件的ready事件，
+            layui.use(['upload','layer'],function(){  //layui中包含了大量的组件，此处指明仅仅加载upload和layer组件
+                upload = layui.upload; //upload指代上传组件
+                layer=layui.layer;  //layer指代各种弹出窗口弹出窗口组件，非常有利于业务的控制，我们项目中可以大量使用
+                upload.render({
+                    elem:'#test1',  //点击哪个按钮时，选择本地文件 
+                        url:'admin/htproduct?method=saveImg', //服务器端接收文件数据的地址
+                        done:function(res){ //当服务器端保存成功后回调此方法，已经约定res格式为json
+                            //res对象中到底有哪些属性， 由服务器端控制。    
+                            layer.alert(res.message);  //layer的alert方法，可以呈现1个更好看的弹出框
+                            document.getElementById("Pic").value="images/"+res.message;  
+                        }
+                    });
+              });
+        });
+ 	 
+ 	 ;
+    
+    </script>
     <script>
       layui.use('laydate', function(){
         var laydate = layui.laydate;
