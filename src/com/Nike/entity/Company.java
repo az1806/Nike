@@ -71,6 +71,9 @@ public class Company {
 	public void setCompany_Pic(String company_Pic) {
 		Company_Pic = company_Pic;
 	}
+	public Company() {
+		super();
+	}
 	public Company(int company_Id, String company_Name, String company_Phone,
 			String company_Email, String company_address,
 			String company_profile, String company_culture,
@@ -87,9 +90,6 @@ public class Company {
 		this.officialwebsite = officialwebsite;
 		Company_Pic = company_Pic;
 	}
-	public Company() {
-		super();
-	}
 	@Override
 	public String toString() {
 		return "Company [company_Id=" + company_Id + ", company_Name="
@@ -101,5 +101,4 @@ public class Company {
 				+ ", Company_Pic=" + Company_Pic + "]";
 	}
 	
-
 }

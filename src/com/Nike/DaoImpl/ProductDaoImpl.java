@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.Nike.Dao.ProductDao;
 import com.Nike.Util.DBManager;
+import com.Nike.entity.News;
 import com.Nike.entity.Product;
 import com.mysql.jdbc.ResultSet;
 
@@ -95,58 +96,22 @@ public class ProductDaoImpl implements ProductDao {
 	}
 
 	@Override
-	public List<Product> getAllProductt() {
-		List<Product> list = new ArrayList<Product>();
-		ResultSet rs = DBManager.querySQL("select * from Product");
-		try {
-			while (rs.next()) {
-				Product p = new Product();
-				p.setProduct_Id(rs.getInt("Product_Id"));
-				p.setProduct_Name(rs.getString("Product_Name"));
-				p.setProduct_type(rs.getString("type_Id"));
-				p.setProduct_price(rs.getString("Product_price"));
-				p.setProduct_content(rs.getString("Product_content"));
-				p.setProduct_pic(rs.getString("Product_pic"));
-				list.add(p);
-			}
-			return list;
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+	public List<Product> chaxunpro(int tid,String proname,String procon) {
+		String sql = "select * from product where 1=1  ";
+		if(tid >0){//非空判定
+			sql +=" and type_id ='"+tid+"%'";
 		}
-		return null;
+		if(proname !=null&& !proname.equals("")){//非空判定
+			sql +=" and product_name like'%"+proname+"%'";
+		}
+		if(procon !=null&& !procon.equals("")){//非空判定
+			sql +=" and product_content  like '%"+procon+"%'";
+		}
 		
-	}
-   //随机六个//
-	@Override
-	public List<Product> liujiquery() {
 		List<Product> list = new ArrayList<Product>();
-		ResultSet rs = DBManager.querySQL("select * from Product order by rand() limit 6");
+		ResultSet rs = DBManager.querySQL(sql);
 		try {
-			while (rs.next()) {
-				Product p = new Product();
-				p.setProduct_Id(rs.getInt("Product_Id"));
-				p.setProduct_Name(rs.getString("Product_Name"));
-				p.setProduct_type(rs.getString("type_Id"));
-				p.setProduct_price(rs.getString("Product_price"));
-				p.setProduct_content(rs.getString("Product_content"));
-				p.setProduct_pic(rs.getString("Product_pic"));
-				list.add(p);
-			}
-			return list;
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
-	}
-//根据分类查询产品//
-	@Override
-	public List<Product> typequery(int type_Id) {
-		List<Product> list = new ArrayList<Product>();
-		ResultSet rs = DBManager.querySQL("select * from Product where type_Id="+type_Id);
-		try {
-			while (rs.next()) {
+			while(rs.next()){
 				Product p = new Product();
 				p.setProduct_Id(rs.getInt("Product_Id"));
 				p.setProduct_Name(rs.getString("Product_Name"));

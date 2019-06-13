@@ -7,8 +7,6 @@ public class Product {
 		private String Product_price;
 		private String Product_content;
 		private String Product_pic;
-		
-		
 		public int getProduct_Id() {
 			return Product_Id;
 		}
