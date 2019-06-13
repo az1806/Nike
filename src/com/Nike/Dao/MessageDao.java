@@ -2,10 +2,21 @@ package com.Nike.Dao;
 
 import java.util.List;
 
+
 import com.Nike.entity.Message;
 
 public interface MessageDao {
 		List<Message> getAllMessage();
+		/**
+		 * 添加留言
+		 * @param Name 名称
+		 * @param Phone	电话
+		 * @param Emial	邮件
+		 * @param Content	内容
+		 * @return	受影响行数
+		 */
+	/*	int addMessage(String Name,String Phone,String Emial,String Content,String state);*/
+		
 		/**
 		 * 删除留言
 		 * @param Id 根据Id删除
@@ -13,18 +24,17 @@ public interface MessageDao {
 		 */
 		int deleteMessageById(int Id);
 		
-		/**
-		 * 查询
-		 * @param mstate 按状态查询
-		 * @return
-		 */
-		List<Message> seachMessage(String state);
-		/**
-		 * 根据Id查询留言状态
-		 * @param Id  
-		 * @return
-		 */
-		Message getMessageById(int Id );
 		
-		int updateMessageById(int Id, String state);
+		
+		
+		/*boolean tianjia(Integer id,String Phone,String Emial,String Content,String state);*/
+	
+
+		
+
+		int addMessage(String Name, String Phone, String Emial,
+				String Content);
+
+		
+		
 }

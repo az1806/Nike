@@ -27,8 +27,15 @@ public interface ProductDao {
 		Product updateProductById(int Product_Id);
 		
 		int updatesProductById(int Product_Id, String Product_Name,String type_Id,double Product_price,String Product_content,String Product_Pic);
-
-		List<Product> chaxunpro(int tid,String proname,String procon);
 		
-
+		
+		List<Product> getAllProductt();
+		
+		//随机六个商品图片//
+		List<Product>  liujiquery();
+		
+		//通过产品分类查询产品//
+		List<Product>  typequery(int type_Id);
+		
+		
 }

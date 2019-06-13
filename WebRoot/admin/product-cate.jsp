@@ -79,7 +79,7 @@
               <a title="编辑"  onclick="x_admin_show('编辑','admin-edit.html')" href="javascript:;">
                 <i class="layui-icon">&#xe642;</i>
               </a>
-              <a title="删除" onclick="return confirm('确定要执行此操作吗？')" href="javascript:;">
+              <a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;">
                 <i class="layui-icon">&#xe640;</i>
               </a>
             </td>

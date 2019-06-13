@@ -30,7 +30,7 @@ public class DBManager {
 
 			con = (Connection) DriverManager.getConnection(
 
-			"jdbc:mysql://127.0.0.1:3306/nikedb", "root", "admin");
+			"jdbc:mysql://127.0.0.1:3306/nikedb", "root", "123456");
 
 			System.out.println("数据库连接成功");
 			sta = (Statement) con.createStatement();
@@ -82,7 +82,7 @@ public class DBManager {
 		try {
 
 			Class.forName("com.mysql.jdbc.Driver");
-
+			System.out.println("驱动加载成功！");
 		} catch (ClassNotFoundException e) {
 
 			System.out.println("驱动加载失败！");
@@ -99,7 +99,7 @@ public class DBManager {
 
 			con = (Connection) DriverManager.getConnection(
 
-			"jdbc:mysql://127.0.0.1:3306/nikedb", "root", "admin");
+			"jdbc:mysql://127.0.0.1:3306/nikedb", "root", "123456");
 			System.out.println("数据库连接成功");
 			sta = (Statement) con.createStatement();
 

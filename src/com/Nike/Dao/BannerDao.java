@@ -7,5 +7,6 @@ import com.Nike.entity.Banner;
 
 
 public interface BannerDao {
+	
 	List<Banner> getAllBanner();
 }

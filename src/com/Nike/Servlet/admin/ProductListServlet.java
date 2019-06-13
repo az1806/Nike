@@ -11,22 +11,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.Nike.Dao.ProductDao;
-import com.Nike.Dao.ProducttypeDao;
 import com.Nike.DaoImpl.ProductDaoImpl;
-import com.Nike.DaoImpl.ProducttypeDaoImpl;
 import com.Nike.entity.Product;
-import com.Nike.entity.Producttype;
 
 public class ProductListServlet extends BaseServlet {
-	ProductDao pDao = new ProductDaoImpl();
-	ProducttypeDao ptDao = new ProducttypeDaoImpl();
+	ProductDao pDao = new ProductDaoImpl();	
 	public void getAllProduct(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
 		List<Product> list = pDao.getAllProduct();
 		request.setAttribute("list", list);
-		List<Producttype> ptlist = ptDao.getAllProducttype();
-		request.setAttribute("ptlist", ptlist);
 		request.getRequestDispatcher("productlist.jsp").forward(request, response);
 	}
 	public void addProduct(HttpServletRequest request, HttpServletResponse response)
@@ -78,17 +72,4 @@ public class ProductListServlet extends BaseServlet {
 		}
 		
 	}
-	
-	
-	public void chaxunpro(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		int tid = Integer.parseInt(request.getParameter("tid"));
-		String proname = java.net.URLDecoder.decode(request.getParameter("proname"),  "utf-8");
-		String procon = java.net.URLDecoder.decode(request.getParameter("procon"), "utf-8");
-		List<Product> list = pDao.chaxunpro(tid, proname, procon);
-			request.setAttribute("list", list);
-			request.getRequestDispatcher("productlist.jsp").forward(request, response);
-		}
-		
-	}
-
+}

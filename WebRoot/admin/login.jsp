@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*,com.Nike.entity.*" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -19,22 +19,37 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="admin/css/font.css">
 	<link rel="stylesheet" href="admin/css/xadmin.css">
-	<script type="text/javascript" src="admin/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
     <script src="admin/lib/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="admin/js/xadmin.js"></script>
-
+	<script type="text/javascript">
+		function login(){
+			alert(1);
+			var username = document.getElementById("username").value;
+			var password = document.getElementById("password").value;
+			$.post("admin/user?method=login",{"username":username, "password":password},function(res){
+				if (res.success){
+					alert(res.message);
+					window.location.href = "admin/index.jsp";
+				} else {
+					alert(res.message);
+				}
+			},"json");
+		}
+	</script>
 </head>
 <body class="login-bg">
+    
     <div class="login layui-anim layui-anim-up">
         <div class="message">x-admin2.0-管理登录</div>
         <div id="darkbannerwrap"></div>
         
-        <form  class="layui-form" method="post"  action="/NIKES/login">
-            <input name="name" id="username" placeholder="用户名"  type="text" lay-verify="required" class="layui-input" >
+        <form method="post" class="layui-form"  >
+            <input name="username" id="username" placeholder="用户名"  type="text" lay-verify="required" class="layui-input" >
             <hr class="hr15">
             <input name="password" id="password" lay-verify="required" placeholder="密码"  type="password" class="layui-input">
             <hr class="hr15">
-            <input value="登录"   style="width:100%;" type="submit">
+            <input value="登录" onclick="login()"  style="width:100%;" type="button">
             <hr class="hr20" >
         </form>
     </div>
