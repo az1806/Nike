@@ -1,12 +1,13 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@page import="com.Nike.entity.Company"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-  <head>
+
+<html lang="zh-cn">
+<head>
     <title>某某家具设计公司企业官网-模板之家</title>
     ﻿<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -36,26 +37,35 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <footer>
+    <% Company c = (Company)request.getAttribute("c"); %>
     <div>
         <div class="footer-info">
             <div class="footer-content">
                 <img src="images/qccode.png" alt="">
                <div>
-                <p>招商热线:0714-8868331</p>
+                <p>招商热线:
+                             <%= c.getBusinesscall() %>
+                </p>
                 <div class="footer-box">
                     <i class="icon-tel"></i>
                     <span>公司电话:</span>
-                    <span>0714-8868331</span>
+                    <span>
+                    
+                    <%= c.getCompany_Phone() %>
+                    </span>
                 </div>
                 <div class="footer-box">
                     <i class="icon-email"></i>
                     <span>公司邮箱:</span>
-                    <span>123@dayeyunalading.com</span>
+                    <span> 
+                     <%= c.getCompany_Email() %>
+                    </span>
                 </div>
                 <div class="footer-box">
                     <i class="icon-address"></i>
                     <span>公司地址:</span>
-                    <span>湖北省XXX市XXX大道小区B栋201</span>
+                    <span></span>
+                          <%= c.getCompany_address() %>
                 </div>
                </div>
             </div>

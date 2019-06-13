@@ -6,14 +6,19 @@ import com.Nike.entity.News;
 
 public interface NewsDao {
 	List<News> getAllNews();
-	
-	
-	int addNews(String news_title,String news_content,String news_date,String news_type);
-	
+
+	List<News> getAllNews(int id);
+
+	List<News> typequery(int news_type);
+
+	int addNews(String news_content, String news_type);
+
 	int deletNewsById(int news_Id);
-	
+
 	News updateNewsById(int news_Id);
-	int updatesNewsById(String news_content,String news_type,int news_Id);
-	
-	List<News> search(String news_title,String news_content,int news_type);
+
+	int updatesNewsById(String news_content, String news_type, int news_Id);
+
+	News idquery(int news_Id);
+
 }

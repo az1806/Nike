@@ -1,54 +1,40 @@
-<%@ page language="java" import="java.util.*,com.Nike.entity.*"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*,com.Nike.entity.*" pageEncoding="UTF-8"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
-	+ request.getServerName() + ":" + request.getServerPort()
-	+ path + "/";
-	List<Product> pro = (List<Product>)request.getAttribute("list");
-	List<Producttype> prd = (List<Producttype>)request.getAttribute("ptlist");
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+			List<Product> pro = (List<Product>)request.getAttribute("list");
 %>
 
 <!DOCTYPE html>
 <html>
-
-<head>
-<base href="<%=basePath%>">
-<meta charset="UTF-8">
-<title>欢迎页面-X-admin2.0</title>
-<meta name="renderer" content="webkit">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport"
-	content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-<link rel="stylesheet" href="admin/css/font.css">
-<link rel="stylesheet" href="admin/css/xadmin.css">
-
-<script type="text/javascript" src="admin/lib/layui/layui.js"
-	charset="utf-8"></script>
-<script type="text/javascript" src="admin/js/xadmin.js"></script>
-
-<script type="text/javascript" src="admin/js/jquery-3.1.1.min.js"></script>
-<link rel="stylesheet" href="admin/layui/css/layui.css" type="text/css"></link>
-<script type="text/javascript" src="admin/layui/layui.js"></script>
-<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
-<!--[if lt IE 9]>
+  
+  <head>
+	<base href="<%=basePath%>">
+    <meta charset="UTF-8">
+    <title>欢迎页面-X-admin2.0</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="admin/css/font.css">
+    <link rel="stylesheet" href="admin/css/xadmin.css">
+    
+    <script type="text/javascript" src="admin/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="admin/js/xadmin.js"></script>
+    
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" href="admin/layui/css/layui.css" type="text/css"></link>
+    <script type="text/javascript" src="admin/layui/layui.js"></script>
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <!--[if lt IE 9]>
       <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
       <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-</head>
-<script type="text/javascript">
-  function searchpro(){
-    var tid = document.getElementById("tid").value;
- 	var proname = document.getElementById("proname").value;
- 	var procon = document.getElementById("procon").value;
- 	window.location.href="admin/productlist?method=chaxunpro&proname="+encodeURI(encodeURI(proname))+"&procon="+encodeURI(encodeURI(procon))+"&tid="+tid;
- 	
-  }
-  
-  </script>
-<script type="text/javascript">
+   
+  </head>
+ 	 <script type="text/javascript">
  		function addproduct(){
  			var pname = document.getElementById("pname").value;
  			var type_Id = document.getElementById("type_Id").value;
@@ -61,92 +47,83 @@
  			
  		}
  	</script>
-<body>
-	<div class="x-nav">
-		<span class="layui-breadcrumb"> <a href="">首页</a> <a href="">演示</a>
-			<a> <cite>导航元素</cite>
-		</a> </span> <a class="layui-btn layui-btn-small"
-			style="line-height:1.6em;margin-top:3px;float:right"
-			href="javascript:location.replace(location.href);" title="刷新"> <i
-			class="layui-icon" style="line-height:30px">ဂ</i>
-		</a>
-	</div>
-	<div class="x-body">
-		<div class="layui-row">
-			<form class="layui-form layui-col-md12 x-so layui-form-pane">
-				<input class="layui-input" placeholder="产品名称" name="cate_name"
-					id="pname"> <input class="layui-input" placeholder="类型名称"
-					name="cate_name" id="type_Id"> <input class="layui-input"
-					placeholder="产品单价" name="cate_name" id="pprice"> <input
-					class="layui-input" placeholder="产品简介" name="cate_name"
-					id="pcontent"> <input class="layui-input"
-					placeholder="产品图片" name="cate_name" id="ppic">
-				<button class="layui-btn" type="button" id="test1">浏览上传</button>
-				<button class="layui-btn" type="button" onclick="addproduct()">
-					<i class="layui-icon"></i>增加
-				</button>
-				</br>
+  <body>
+    <div class="x-nav">		
+      <span class="layui-breadcrumb">
+        <a href="">首页</a>
+        <a href="">演示</a>
+        <a>
+          <cite>导航元素</cite></a>
+      </span>
+      <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
+        <i class="layui-icon" style="line-height:30px">ဂ</i></a> 
+    </div>
+    <div class="x-body">
+      <div class="layui-row">
+        <form class="layui-form layui-col-md12 x-so layui-form-pane">
+          <input class="layui-input" placeholder="产品名称" name="cate_name" id="pname">
+           <input class="layui-input" placeholder="类型名称" name="cate_name" id="type_Id">
+           <input class="layui-input" placeholder="产品单价" name="cate_name" id="pprice">
+            <input class="layui-input" placeholder="产品简介" name="cate_name" id="pcontent">
+             <input class="layui-input" placeholder="产品图片" name="cate_name" id="ppic">
+            <button class="layui-btn"  type="button" id="test1" >浏览上传</button>
+          <button class="layui-btn"  type="button" onclick="addproduct()" ><i class="layui-icon"></i>增加</button>
+        </form>
+      </div>
+      <xblock>
+        <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
+        <span class="x-right" style="line-height:40px">共有数据：88 条</span>
+      </xblock>
+      <table class="layui-table">
+        <thead>
+          <tr>
+            <th>
+              <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
+            </th>
+            <th>ID</th>
+            <th>产品名称</th>
+            <th>产品单价</th>
+            <th>产品简介</th>
+            <th>产品图片</th>
+            <th>操作</th>
+        </thead>
+        <tbody>
+        <%for(int i=0;i<pro.size();i++){ %>
+          <tr>
+            <td>
+              <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
+            </td>
+            <td><%=pro.get(i).getProduct_Id() %></td>
+            <td><%=pro.get(i).getProduct_Name() %></td>
+            <td><%=pro.get(i).getProduct_price() %></td>
+            <td><%=pro.get(i).getProduct_content() %></td>
+            <td><img src="<%=pro.get(i).getProduct_pic() %>"></img></td>
+            <td class="td-manage">
+              <a title="编辑"   href="admin/productlist?method=updateProduct&Product_Id=<%=pro.get(i).getProduct_Id()%>">
+                <i class="layui-icon">&#xe642;</i>
+              </a>
+              <a title="删除" onclick="member_del(this,'要删除的id')" href="admin/productlist?method=deletProduct&Product_Id=<%=pro.get(i).getProduct_Id() %>">
+                <i class="layui-icon">&#xe640;</i>
+              </a>
+            </td>
+          </tr>
+          <%} %>
+        </tbody>
+      </table>
+      <div class="page">
+        <div>
+          <a class="prev" href="">&lt;&lt;</a>
+          <a class="num" href="">1</a>
+          <span class="current">2</span>
+          <a class="num" href="">3</a>
+          <a class="num" href="">489</a>
+          <a class="next" href="">&gt;&gt;</a>
+        </div>
+      </div>
 
-			</form>
-			<form>
-			<input class="layui-input" placeholder="产品名称" name="proname"
-				id="proname"> <input class="layui-input" placeholder="产品简介"
-				name="procon" id="procon">
-			<select id="tid">
-			<option value="0">请选择</option>
-			
-				<%for(int i=0;i<prd.size();i++){ %>
-			
-			<option value="<%=prd.get(i).getType_Id()%>"><%=prd.get(i).getType_Name()%></option>
-			<%
-				}
-			%> </select>
-			<input class="layui-btn" type="button" onclick="searchpro()" value="查询">
-				
-			
-			</form>
-		</div>
-		<table class="layui-table">
-			<thead>
-				<tr>
-
-					<th>ID</th>
-					<th>产品名称</th>
-					<th>类型</th>
-					<th>产品单价</th>
-					<th>产品简介</th>
-					<th>产品图片</th>
-					<th>操作</th>
-			</thead>
-			<tbody>
-				<%
-					for(int i=0;i<pro.size();i++){
-				%>
-				<tr>
-					<td><%=pro.get(i).getProduct_Id()%></td>
-					<td><%=pro.get(i).getProduct_Name()%></td>
-					<td><%=pro.get(i).getProduct_type()%></td>
-					<td><%=pro.get(i).getProduct_price()%></td>
-					<td><%=pro.get(i).getProduct_content()%></td>
-					<td><img src="<%=pro.get(i).getProduct_pic()%>"></img>
-					</td>
-					<td class="td-manage"><a title="编辑"
-						href="admin/productlist?method=updateProduct&Product_Id=<%=pro.get(i).getProduct_Id()%>">
-							<i class="layui-icon">&#xe642;</i> </a> <a title="删除"
-						onclick="return confirm('确定要执行此操作吗？')"
-						href="admin/productlist?method=deletProduct&Product_Id=<%=pro.get(i).getProduct_Id()%>">
-							<i class="layui-icon">&#xe640;</i> </a></td>
-				</tr>
-				<%
-					}
-				%>
-			</tbody>
-		</table>
-	</div>
-
-	</div>
-	<script type="text/javascript" src="admin/js/jquery-1.8.2.min.js"></script>
-	<script type="text/javascript">
+    </div>
+    <script type="text/javascript" src="admin/js/jquery-1.8.2.min.js"></script>  
+      <script type="text/javascript">
           var layer,upload;
         $(function (){  //jQuery组件的ready事件，
             layui.use(['upload','layer'],function(){  //layui中包含了大量的组件，此处指明仅仅加载upload和layer组件
@@ -164,7 +141,7 @@
               });
         });
     </script>
-	<script>
+    <script>
       layui.use('laydate', function(){
         var laydate = layui.laydate;
         
@@ -226,6 +203,6 @@
       }
     </script>
 
-</body>
+  </body>
 
 </html>
